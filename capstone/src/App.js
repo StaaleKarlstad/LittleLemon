@@ -7,8 +7,8 @@ import './App.css';
 function App() {
   return (
     <>
-      <Header></Header>
       <Nav></Nav>
+      <Header></Header>
       <Main></Main>
       <Footer></Footer>
     </>
