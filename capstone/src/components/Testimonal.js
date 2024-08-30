@@ -1,12 +1,24 @@
-export default function Testimonial() {
+import TestimonialCard from "./TestimonalCard"
+
+export default function Testimonal() {
     return (
-        <article>
-            <div className='testimonal-rating'>
-                Rating
-            </div>
-            <img src='' alt='user image' clasName='testimonial-image'></img>
-            <div className='testimonal-user'></div>
-            <div className='testimonal-text'></div>
-        </article>
+        <section className='testimonal' style={{backgroundColor: 'blue'}}>
+            <h2>Testimonials</h2>
+            <TestimonialCard
+                imageURL='../../assets/dave.jpeg'
+                name='Dave'
+                review='Good service and great food. Immaculate booking system!'>
+            </TestimonialCard>
+            <TestimonialCard
+                imageURL='../../assets/dave.jpeg'
+                name='Dave'
+                review='Good service and great food. Immaculate booking system!'>
+            </TestimonialCard>
+            <TestimonialCard
+                imageURL='../../assets/dave.jpeg'
+                name='Dave'
+                review='Good service and great food. Immaculate booking system!'>
+            </TestimonialCard>
+        </section>
     )
 }

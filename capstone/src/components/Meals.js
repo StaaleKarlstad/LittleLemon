@@ -3,9 +3,11 @@ import Button from './Button.js'
 
 export default function Meals(){
     return(
-        <section backgrounColor='red'>
-            <h1>This weeks specials!</h1>
-            <Button text='Online Menu'></Button>
+        <section className='meals' style={{backgroundColor: 'red'}}>
+            <div className='headline'>
+                <h1>This weeks specials!</h1>
+                <Button text='Online Menu'></Button>
+            </div>
             <MealCard
                 imageURL='../../assets/greek_salad.jpg'
                 name='Greek Salad'
