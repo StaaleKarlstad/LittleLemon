@@ -2,23 +2,34 @@ import TestimonialCard from "./TestimonalCard"
 
 export default function Testimonal() {
     return (
-        <section className='testimonal' style={{backgroundColor: 'blue'}}>
+        <section className='testimonal'>
             <h2>Testimonials</h2>
-            <TestimonialCard
-                imageURL='../../assets/dave.jpeg'
-                name='Dave'
-                review='Good service and great food. Immaculate booking system!'>
-            </TestimonialCard>
-            <TestimonialCard
-                imageURL='../../assets/dave.jpeg'
-                name='Dave'
-                review='Good service and great food. Immaculate booking system!'>
-            </TestimonialCard>
-            <TestimonialCard
-                imageURL='../../assets/dave.jpeg'
-                name='Dave'
-                review='Good service and great food. Immaculate booking system!'>
-            </TestimonialCard>
+            <div className='testimonal-cards'>
+                <TestimonialCard
+                    imageURL='../../assets/dave.jpeg'
+                    name='Dave'
+                    review='Good service and great food. Immaculate booking system!'
+                    rating='5/5'>
+                </TestimonialCard>
+                <TestimonialCard
+                    imageURL='../../assets/dave.jpeg'
+                    name='Dave'
+                    review='Good service and great food. Immaculate booking system!'
+                    rating='5/5'>
+                </TestimonialCard>
+                <TestimonialCard
+                    imageURL='../../assets/dave.jpeg'
+                    name='Dave'
+                    review='Good service and great food. Immaculate booking system!'
+                    rating='5/5'>
+                </TestimonialCard>
+                <TestimonialCard
+                    imageURL='../../assets/dave.jpeg'
+                    name='Dave'
+                    review='Good service and great food. Immaculate booking system!'
+                    rating='5/5'>
+                </TestimonialCard>
+            </div>
         </section>
     )
 }

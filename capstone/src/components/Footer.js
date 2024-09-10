@@ -1,7 +1,11 @@
 export default function Footer() {
     return (
         <footer>
-            <img src='../../assets/logo.svg' alt='little lemon logo' className='footer-logo'></img>
+            <img 
+                className='footer-logo'
+                src='../../assets/logo.svg' 
+                alt='little lemon logo'> 
+            </img>
             <div className='footer-navigate'>
                 <h3>Navigate</h3>
                 <ul>
