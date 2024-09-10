@@ -1,7 +1,7 @@
 export default function About(){
     return (
-        <section className='about' style={{backgroundColor: 'grey'}}>
-            <div>
+        <section className='about'>
+            <div className='about-information'>
                 <h1>Little lemon</h1>
                 <h3>Chicago</h3>
                 <p>
@@ -9,9 +9,9 @@ export default function About(){
                    Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. 
                 </p>
             </div>
-            <div>
-                <img src='../../assets/restaurant_chef_B.jpg' alt='chef' className='about-image1' style={{width: '100px', height: '100px'}}></img>
-                <img src='../../assets/restaurant.jpg' alt='restaurant' className='about-image2' style={{width: '100px', height: '100px'}}></img>
+            <div className='about-images'>
+                <img src='../../assets/restaurant_chef_B.jpg' alt='chef' className='about-img-bottom'></img>
+                <img src='../../assets/lemon_dessert.jpg' alt='restaurant' className='about-img-top'></img>
             </div>
         </section>
     )
