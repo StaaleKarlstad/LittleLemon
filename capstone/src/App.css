@@ -201,7 +201,7 @@ nav ul {
 }
 
 .testimonial-card{
-  background-color:#EDEFEE;
+  background-color:#495E57;
   padding: 2rem;
   margin-bottom: 2rem;
 }
@@ -312,4 +312,8 @@ button {
   border-radius: 15px;
   background-color: #F4CE14;
   border: none;
+}
+
+button:hover{
+  background-color: #87730e;
 }
