@@ -317,3 +317,10 @@ button {
 button:hover{
   background-color: #87730e;
 }
+
+.bookingform{
+  display: grid;
+  max-width: 200px;
+  gap: 20px;
+  padding: 2rem;
+}
