@@ -1,6 +1,14 @@
 import Button from "./Button"
+import { Link, useNavigate } from 'react-router-dom'
+
 
 export default function Hero(){
+    const navigate = useNavigate()
+
+    const clickHandler = () => {
+        navigate('/booking')
+    }
+
     return(
         <section className='hero'>
             <div className='hero-div'>
@@ -9,8 +17,9 @@ export default function Hero(){
                 <p>We are a family owned mediterranean restaurant,
                     focused on traditional recipes served with a modern twist </p>
                 <div className='hero-button'>
-                    <Button
-                        text='Reserve a Table'>
+                    <Button 
+                        onClick={clickHandler}
+                        text='Book a Table'>
                     </Button>
                 </div>
             </div>

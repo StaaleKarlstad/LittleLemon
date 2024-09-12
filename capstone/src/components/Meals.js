@@ -6,7 +6,7 @@ export default function Meals(){
         <section className='meals'>
             <div className='meals-headline'>
                 <h1>This weeks specials!</h1>
-                <Button text='Online Menu'></Button>
+                <Button {...'Online Menu'} ></Button>
             </div>
             <div className='meals-cards'>
                 <MealCard
