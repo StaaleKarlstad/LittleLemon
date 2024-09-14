@@ -5,6 +5,8 @@ import About from './About.js'
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Wrapper from './Wrapper.js';
 import Booking from './Booking.js';
+import AvailableTimes from './AvailableTimes.js';
+import Submit from './Submit.js';
 
 const router = createBrowserRouter([
     {
@@ -30,7 +32,11 @@ const router = createBrowserRouter([
     },
     {
         path: '/booking',
-        element: <Wrapper><Booking></Booking></Wrapper>
+        element: <Wrapper><AvailableTimes></AvailableTimes></Wrapper>
+    },
+    {
+        path: '/submit',
+        element: <Wrapper><Submit></Submit></Wrapper>
     }
 ])
 
