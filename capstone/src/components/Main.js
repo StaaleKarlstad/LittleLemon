@@ -5,8 +5,8 @@ import About from './About.js'
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Wrapper from './Wrapper.js';
 import Booking from './Booking.js';
-import AvailableTimes from './AvailableTimes.js';
 import Submit from './Submit.js';
+import Error from './Error.js';
 
 const router = createBrowserRouter([
     {
@@ -16,7 +16,8 @@ const router = createBrowserRouter([
                     <Meals/>
                     <Testimonal/>
                     <About/>
-                </Wrapper>
+                </Wrapper>,
+        errorElement: <Error></Error>
     },
     {
         path: '/testimonial',
@@ -32,7 +33,7 @@ const router = createBrowserRouter([
     },
     {
         path: '/booking',
-        element: <Wrapper><AvailableTimes></AvailableTimes></Wrapper>
+        element: <Wrapper><Booking></Booking></Wrapper>
     },
     {
         path: '/submit',

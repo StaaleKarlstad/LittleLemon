@@ -1,5 +1,5 @@
 import { fireEvent, render, screen } from '@testing-library/react';
-import AvailableTimes, { updateTimes, initializeTimes } from './components/AvailableTimes';;
+import AvailableTimes, { updateTimes, initializeTimes } from './components/Booking';;
 import Main from './components/Main';
 import BookingForm from './components/BookingForm';
 
