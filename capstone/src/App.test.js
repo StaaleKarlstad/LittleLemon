@@ -2,14 +2,25 @@ import { fireEvent, render, screen } from '@testing-library/react';
 import AvailableTimes, { updateTimes, initializeTimes } from './components/Booking';;
 import Main from './components/Main';
 import BookingForm from './components/BookingForm';
+import BookingSummary from './components/BookingSummary';
 
 test('renders form submission button', () => {
+  const testObj = {
+    firstname: '',
+    lastname: '',
+    date: '',
+    time: '',
+    guests: 1,
+    occasion: 'Birthday',
+    }
   const mockSubmit = jest.fn();
   const mockDispatch = jest.fn();
+  const mockContinue = jest.fn();
   const availableTimes = ['19:00', '20:00']; // Mock times for select input
 
   render(<BookingForm availableTimes={availableTimes} dispatch={mockDispatch} submit={mockSubmit} />);
-  const buttonElement = screen.getByRole('button', { name: /Make your reservation/i });
+  render(<BookingSummary formData={testObj} handleContinue={mockContinue} handleSubmit={mockSubmit}></BookingSummary>)
+  const buttonElement = screen.getByRole('button', { name: /Confirm Reservation/i });
   expect(buttonElement).toBeInTheDocument();
 });
 
@@ -38,6 +49,7 @@ test('test that user can submit form', () => {
   fireEvent.change(screen.getByTestId('time'), {target: {value: '19:00'}})
   fireEvent.change(screen.getByTestId('guests', {target: {value: 1}}))
   fireEvent.change(screen.getByTestId('occasion'), {target: {value: 'Birthday'}})
+  fireEvent.click(screen.getByTestId('continue-button'))
   fireEvent.click(screen.getByTestId('submit-button'))
 
   expect(mockSubmit).toHaveBeenCalledWith({
