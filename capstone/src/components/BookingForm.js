@@ -1,4 +1,7 @@
 import { useState } from 'react';
+import useLocalStorage from './useLocalStorage';
+import BookingSummary from './BookingSummary';
+import InputForm from './InputForm';
 
 
 export default function BookingForm( {availableTimes, dispatch, submit} ) {
@@ -11,6 +14,12 @@ export default function BookingForm( {availableTimes, dispatch, submit} ) {
         occasion: 'Birthday',
         });
 
+    const [showSummary, setShowOverview] = useState(false)
+    const {getBooking, setBooking} = useLocalStorage(formData.firstname + formData.lastname)
+
+    const handleContinue = () => {
+      setShowOverview(!showSummary)
+    }
 
     const handleInputChange = (e) => {
         e.preventDefault();
@@ -21,7 +30,9 @@ export default function BookingForm( {availableTimes, dispatch, submit} ) {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        submit(formData)
+        setBooking(formData)
+        const booking = getBooking()
+        submit(booking)
       };
 
     const handleDateChange = (e) => {
@@ -33,71 +44,21 @@ export default function BookingForm( {availableTimes, dispatch, submit} ) {
     }
 
   return (
-    <form className='bookingform' onSubmit={handleSubmit}>
-      <label htmlFor="firstname">Firstname</label>
-      <input
-        type='text'
-        id='firstname'
-        data-testid='firstname'
-        value={formData.firstname}
-        onChange={handleInputChange}
-      />
-
-      <label htmlFor="lastname">Lastname</label>
-      <input
-        type='text'
-        id='lastname'
-        data-testid='lastname'
-        value={formData.lastname}
-        onChange={handleInputChange}
-      />
-
-      <label htmlFor="res-date">Choose date</label>
-      <input
-        type="date"
-        id="date"
-        data-testid='date'
-        value={formData.date}
-        onChange={handleDateChange}
-      />
-
-      <label htmlFor="res-time">Choose time</label>
-      <select
-          id="time"
-          data-testid='time'
-          value={formData.time}
-          onChange={handleInputChange}
-        >
-        {availableTimes.map(times => <option key={times}>{times}</option>)}
-      </select>
-
-      <label htmlFor="guests">Number of guests</label>
-      <input
-        type="number"
-        id="guests"
-        data-testid='guests'
-        min="1"
-        max="10"
-        value={formData.guests}
-        onChange={handleInputChange}
-      />
-
-      <label htmlFor="occasion">Occasion</label>
-      <select
-        id="occasion"
-        data-testid='occasion'
-        value={formData.occasion}
-        onChange={handleInputChange}
+    <>
+      {showSummary ? <BookingSummary
+        formData={formData}
+        handleContinue={handleContinue}
+        handleSubmit={handleSubmit}
       >
-        <option>Birthday</option>
-        <option>Anniversary</option>
-      </select>
-
-      <input 
-        data-testid='submit-button'
-        type="submit" 
-        value="Make Your reservation" 
-        onClick={handleSubmit}/>
-    </form>
+      </BookingSummary> :
+      <InputForm
+        formData={formData}
+        handleContinue={handleContinue}
+        handleSubmit={handleSubmit}
+        handleInputChange={handleInputChange}
+        handleDateChange={handleDateChange}
+        availableTimes={availableTimes}>
+      </InputForm>}
+    </>
   );
 }
