@@ -4,7 +4,7 @@ import Footer from './Footer.js'
 
 export default function Wrapper({ children }){
     return(
-        <div className='Wrapper'>
+        <div className='wrapper'>
             <Nav></Nav>
             {Children.map(children, (child) => {return child})}
             <Footer></Footer>
