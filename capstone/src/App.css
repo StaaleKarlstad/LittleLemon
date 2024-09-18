@@ -307,7 +307,7 @@ footer {
 }
 
 button {
-  width: 200px;
+  width: 280px;
   height: 60px;
   border-radius: 15px;
   background-color: #F4CE14;
@@ -318,9 +318,37 @@ button:hover{
   background-color: #87730e;
 }
 
-.bookingform{
-  display: grid;
-  max-width: 200px;
-  gap: 20px;
+.inputform{
+  display: flex;
+  flex-direction: column;
   padding: 2rem;
+  gap: 20px;
 }
+
+.inputform-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-input, .form-select {
+  display: flex;
+  flex-direction: column;
+  width: 280px;
+}
+
+.input-button{
+  width: 280;
+  padding: 15px;
+}
+input, select {
+  padding: 15px;
+}
+
+.form-error-message{
+  font-size: 12px;
+  padding: 3px;
+  color: red;
+}
+
