@@ -13,7 +13,7 @@ export default function useLocalStorage(key){
             const booking = window.localStorage.getItem(key);
             return booking ? JSON.parse(booking) : 'undefined';
         } catch (error) {
-            console.log("OH NOOOOOO")
+            console.log(error)
         }
     }
     return { setBooking, getBooking }
