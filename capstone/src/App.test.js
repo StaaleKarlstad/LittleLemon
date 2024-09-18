@@ -1,6 +1,4 @@
 import { fireEvent, render, screen } from '@testing-library/react';
-import AvailableTimes, { updateTimes, initializeTimes } from './components/Booking';;
-import Main from './components/Main';
 import BookingForm from './components/BookingForm';
 import BookingSummary from './components/BookingSummary';
 
@@ -16,7 +14,7 @@ test('renders form submission button', () => {
   const mockSubmit = jest.fn();
   const mockDispatch = jest.fn();
   const mockContinue = jest.fn();
-  const availableTimes = ['19:00', '20:00']; // Mock times for select input
+  const availableTimes = ['19:00', '20:00'];
 
   render(<BookingForm availableTimes={availableTimes} dispatch={mockDispatch} submit={mockSubmit} />);
   render(<BookingSummary formData={testObj} handleContinue={mockContinue} handleSubmit={mockSubmit}></BookingSummary>)
@@ -39,7 +37,7 @@ test('test that user can submit form', () => {
 
   const mockSubmit = jest.fn();
   const mockDispatch = jest.fn();
-  const availableTimes = ['19:00', '20:00']; // Mock times for select input
+  const availableTimes = ['19:00', '20:00'];
 
   render(<BookingForm availableTimes={availableTimes} dispatch={mockDispatch} submit={mockSubmit} />);
 
