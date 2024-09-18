@@ -1,79 +1,79 @@
+import FormError from "./FormError";
+import Input from "./Input";
+import Select from "./Select";
 
 export default function InputForm({
-    formData, 
-    handleInputChange, 
-    handleContinue, 
-    handleSubmit, 
-    handleDateChange,
-    availableTimes}){
-    
-    return (
-        <form className='bookingform' onSubmit={handleSubmit}>
-    <label htmlFor="firstname">Firstname</label>
-    <input
-      type='text'
-      id='firstname'
-      data-testid='firstname'
-      value={formData.firstname}
-      onChange={handleInputChange}
-    />
+  formData,
+  handleInputChange,
+  handleContinue,
+  handleSubmit,
+  availableTimes,
+}) {
+  const inputs = [
+    {
+      id: "firstname",
+      label: "Firstname",
+      type: "text",
+      pattern: "(?=^.{2,}$)^([A-Za-z][\s]?)+$",
+      errorMessage:"First name should be at least 2 characters and should not contain any special characters",
+    },
+    {
+      id: "lastname",
+      label: "Lastname",
+      type: "text",
+      pattern: "(?=^.{2,}$)^([A-Za-z][\s]?)+$",
+      errorMessage:"Last name should be at least 2 characters and should not contain any special characters",
+    },
+    {
+      id: "date",
+      label: "Choose a date",
+      type: "date",
+      errorMessage:"",
+    },
+    {
+      id: "guests",
+      label: "Size of party",
+      type: "number",
+      range: [1, 10],
+      errorMessage:"Size of party should be between 1-10",
+    },
+  ];
 
-    <label htmlFor="lastname">Lastname</label>
-    <input
-      type='text'
-      id='lastname'
-      data-testid='lastname'
-      value={formData.lastname}
-      onChange={handleInputChange}
-    />
+  const select = {
+    id: "time",
+    label: "Choose a time",
+    type: "select",
+    options: availableTimes,
+    errorMessage:"You must choose a time",
+  };
 
-    <label htmlFor="res-date">Choose date</label>
-    <input
-      type="date"
-      id="date"
-      data-testid='date'
-      value={formData.date}
-      onChange={handleDateChange}
-    />
+  return (
+    <div className="inputform-container">
+      <h1>Book a Table</h1>
+      <form id="inputform" className="inputform" onSubmit={handleContinue}>
+        {inputs.map((input) => (
+          <Input
+            key={input.id}
+            {...input}
+            handleInputChange={handleInputChange}
+            value={formData[input.id]}
+          ></Input>
+        ))}
 
-    <label htmlFor="res-time">Choose time</label>
-    <select
-        id="time"
-        data-testid='time'
-        value={formData.time}
-        onChange={handleInputChange}
-      >
-      {availableTimes.map(times => <option key={times}>{times}</option>)}
-    </select>
+        <Select
+          handleInputChange={handleInputChange}
+          value={formData.time}
+          {...select}
+        ></Select>
 
-    <label htmlFor="guests">Number of guests</label>
-    <input
-      type="number"
-      id="guests"
-      data-testid='guests'
-      min="1"
-      max="10"
-      value={formData.guests}
-      onChange={handleInputChange}
-    />
-
-    <label htmlFor="occasion">Occasion</label>
-    <select
-      id="occasion"
-      data-testid='occasion'
-      value={formData.occasion}
-      onChange={handleInputChange}
-    >
-      <option>Birthday</option>
-      <option>Anniversary</option>
-    </select>
-
-    <button
-      data-testid='continue-button'
-      value="Make Your reservation"
-      onClick={handleContinue}>
-        Continue
-    </button>
-  </form>
-    )
+        <button
+          className="input-button"
+          type="submit"
+          data-testid="continue-button"
+        >
+          Continue
+        </button>
+      </form>
+    </div>
+  );
 }

@@ -1,64 +1,67 @@
-import { useState } from 'react';
-import useLocalStorage from './useLocalStorage';
-import BookingSummary from './BookingSummary';
-import InputForm from './InputForm';
+import { useState } from "react";
+import useLocalStorage from "./useLocalStorage";
+import BookingSummary from "./BookingSummary";
+import InputForm from "./InputForm";
 
+export default function BookingForm({ availableTimes, dispatch, submit }) {
+  const [formData, setFormData] = useState({
+    firstname: "",
+    lastname: "",
+    date: "",
+    time: "",
+    guests: 1,
+  });
 
-export default function BookingForm( {availableTimes, dispatch, submit} ) {
-    const [formData, setFormData] = useState({
-        firstname: '',
-        lastname: '',
-        date: '',
-        time: '',
-        guests: 1,
-        occasion: 'Birthday',
-        });
+  const [showSummary, setShowOverview] = useState(false);
+  const { getBooking, setBooking } = useLocalStorage(
+    formData.firstname + formData.lastname
+  );
 
-    const [showSummary, setShowOverview] = useState(false)
-    const {getBooking, setBooking} = useLocalStorage(formData.firstname + formData.lastname)
+  const handleContinue = () => {
+    setShowOverview(true);
+    setBooking(formData)
+  };
 
-    const handleContinue = () => {
-      setShowOverview(!showSummary)
+  const handleGoBack = () => {
+    setShowOverview(false)
+  }
+
+  const handleInputChange = (e) => {
+    const { id, value } = e.target;
+    console.log(value)
+    console.log(id)
+    if (id === 'date'){
+      const date = new Date(value);
+      dispatch(date);
     }
+    setFormData({ ...formData, [id]: value });
+  };
 
-    const handleInputChange = (e) => {
-        e.preventDefault();
-        const { id, value } = e.target;
-        console.log(value)
-        setFormData({ ...formData, [id]: value });
-      };
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        setBooking(formData)
-        const booking = getBooking()
-        submit(booking)
-      };
-
-    const handleDateChange = (e) => {
-        e.preventDefault();
-        const { id, value } = e.target;
-        const date = new Date(value)
-        dispatch(date);
-        handleInputChange(e);
-    }
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setBooking(formData);
+    const booking = getBooking();
+    submit(booking);
+  };
 
   return (
     <>
-      {showSummary ? <BookingSummary
-        formData={formData}
-        handleContinue={handleContinue}
-        handleSubmit={handleSubmit}
-      >
-      </BookingSummary> :
-      <InputForm
-        formData={formData}
-        handleContinue={handleContinue}
-        handleSubmit={handleSubmit}
-        handleInputChange={handleInputChange}
-        handleDateChange={handleDateChange}
-        availableTimes={availableTimes}>
-      </InputForm>}
+      {showSummary ? (
+        <BookingSummary
+          formData={formData}
+          handleGoBack={handleGoBack}
+          handleSubmit={handleSubmit}
+        ></BookingSummary>
+      ) : (
+        
+        <InputForm
+          formData={formData}
+          handleContinue={handleContinue}
+          handleSubmit={handleSubmit}
+          handleInputChange={handleInputChange}
+          availableTimes={availableTimes}
+        ></InputForm>
+      )}
     </>
   );
 }
