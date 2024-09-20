@@ -352,3 +352,38 @@ input, select {
   color: red;
 }
 
+.booking-summary-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.booking-summary{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 4rem;
+  padding-top: 2rem;
+  width: 320px;
+
+}
+
+.booking-summary-info{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-content:left;
+  width: 100%;
+  border-bottom: 1px solid #495E57;
+}
+
+.booking-summary-buttons{
+  padding-top: 4rem;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+.booking-summary-buttons button{
+  width: 160px;
+}
+
