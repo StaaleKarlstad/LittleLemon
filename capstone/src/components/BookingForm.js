@@ -17,7 +17,8 @@ export default function BookingForm({ availableTimes, dispatch, submit }) {
     formData.firstname + formData.lastname
   );
 
-  const handleContinue = () => {
+  const handleContinue = (e) => {
+    e.preventDefault()
     setShowOverview(true);
     setBooking(formData)
   };
