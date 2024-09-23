@@ -1,17 +1,48 @@
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
+import { useState } from "react";
+import NavLinkElement from "./NavLinkElement";
 
-export default function Nav(){
-    return(
-        <nav>
-            <ul>
-                <li><img src='../../assets/Logo.svg' alt='Little Lemon Logo'></img></li>
-                <li><Link to='/'>Home</Link></li>
-                <li><Link to='/about'>About</Link></li>
-                <li><Link to='/meals'>Menu</Link></li>
-                <li><Link to='/reservations'>Reservations</Link></li>
-                <li><Link to='/testimonial'>Reviews</Link></li>
-                <li><Link to='/login'>Log In</Link></li>
-            </ul>
-        </nav>
-    )
+export default function Nav() {
+  const [mobileOpen, setMobileOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setMobileOpen(!mobileOpen);
+  };
+
+  const navLinks = [
+    { linkTo: "/", text: "Home", onClick: toggleMenu },
+    { linkTo: "/about", text: "About", onClick: toggleMenu },
+    { linkTo: "/menu", text: "Menu", onClick: toggleMenu },
+    { linkTo: "/reservations", text: "Reservations", onClick: toggleMenu },
+    { linkTo: "/reviews", text: "Reviews", onClick: toggleMenu },
+    { linkTo: "/login", text: "Login", onClick: toggleMenu },
+  ];
+  return (
+    <nav className="navbar">
+      <div className="burger-menu" onClick={toggleMenu}>
+        <div className="burger-menu-bar"></div>
+        <div className="burger-menu-bar"></div>
+        <div className="burger-menu-bar"></div>
+      </div>
+
+      <ul className={`navbar-desktop`}>
+        {navLinks.map((navLink) => (
+          <NavLinkElement
+            key={navLink.text + "desktop"}
+            {...navLink}
+          ></NavLinkElement>
+        ))}
+      </ul>
+      <div className={`navbar-${mobileOpen ? "open" : "closed"}`}>
+        <ul className={`navbar-mobile-${mobileOpen ? "open" : "closed"}`}>
+          {navLinks.map((navLink) => (
+            <NavLinkElement
+              key={navLink.text + "mobile"}
+              {...navLink}
+            ></NavLinkElement>
+          ))}
+        </ul>
+      </div>
+    </nav>
+  );
 }
