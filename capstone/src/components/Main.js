@@ -1,13 +1,12 @@
 import Hero from './Hero.js'
-import Meals from './Meals.js'
-import Testimonal from './Testimonal.js'
+import Meals from './menu/Meals.js'
+import Testimonal from './reviews/Testimonal.js'
 import About from './About.js'
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Wrapper from './Wrapper.js';
-import Booking from './Booking.js';
-import Submit from './ConfirmBooking.js';
+import Booking from './booking/Booking.js';
 import Error from './Error.js';
-import ConfirmBooking from './ConfirmBooking.js';
+import ConfirmBooking from './booking/ConfirmBooking.js';
 
 const router = createBrowserRouter([
     {

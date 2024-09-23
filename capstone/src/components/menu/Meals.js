@@ -1,5 +1,5 @@
 import MealCard from './MealCard.js'
-import Button from './Button.js'
+import Button from '../Button.js'
 
 export default function Meals(){
     return(

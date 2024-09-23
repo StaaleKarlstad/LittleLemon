@@ -1,5 +1,4 @@
 import { Children } from 'react'
-import Nav from './Nav.js'
 import Footer from './Footer.js'
 import Header from './Header.js'
 
