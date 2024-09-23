@@ -3,7 +3,7 @@ import TestimonialCard from "./TestimonalCard"
 export default function Testimonal() {
     return (
         <section className='testimonal'>
-            <h2>Testimonials</h2>
+            <h2>Reviews</h2>
             <div className='testimonal-cards'>
                 <TestimonialCard
                     imageURL='../../assets/dave.jpeg'
