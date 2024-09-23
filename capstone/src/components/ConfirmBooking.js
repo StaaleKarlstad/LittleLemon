@@ -1,8 +1,8 @@
 export default function ConfirmBooking() {
     return (
-        <div className='booking-conifrmation'>
-            <h1>Your submisssion has been confirmed</h1>
-            <p>We look forward to seeing you!</p>
+        <div className='confirm-booking'>
+            <h1>Reservation confirmed!</h1>
+            <p>Thank you for choosing Little Lemon.<br/><br/>We look forward to seeing you!</p>
         </div>
     )
 }
