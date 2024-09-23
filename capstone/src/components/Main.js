@@ -21,11 +21,11 @@ const router = createBrowserRouter([
         errorElement: <Error></Error>
     },
     {
-        path: '/testimonial',
+        path: '/reviews',
         element: <Wrapper><Testimonal></Testimonal></Wrapper>
     },
     {
-        path: '/meals',
+        path: '/menu',
         element: <Wrapper><Meals></Meals></Wrapper>
     },
     {
