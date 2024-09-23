@@ -392,18 +392,13 @@ footer {
   }
 }
 
-.footer-logo {
-}
-
 .footer-navigate ul li a {
   list-style-type: none;
   list-style: none;
 }
 
-.footer-contact {
-}
-
-.footer-social {
+.footer-links .link{
+ color: white
 }
 
 button {
