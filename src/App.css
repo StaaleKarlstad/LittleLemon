@@ -206,6 +206,7 @@ header {
 
 .mealcard-container {
   background-color: #edefee;
+  
 }
 
 .mealcard-text {
@@ -225,10 +226,11 @@ header {
   color: #ee9972;
 }
 
-.mealcard-image img {
+.mealcard-image{
   width: 100%;
-  height: 100%;
+  height: 50%;
   border: 1px solid black;
+  object-fit: cover;
 }
 
 @media (max-width: 700px) {
@@ -257,8 +259,8 @@ header {
   }
 
   .mealcard-image img {
-    width: 70%;
-    height: 70%;
+    width: 80%;
+    height: 80%;
     border: 1px solid black;
   }
 }
