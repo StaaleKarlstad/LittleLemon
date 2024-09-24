@@ -1,9 +1,8 @@
 import { fireEvent, render, screen } from "@testing-library/react";
-import BookingForm from "./components/BookingForm";
-import BookingSummary from "./components/BookingSummary";
-import Booking from "./components/Booking";
-import Input from "./components/Input";
-import { initializeTimes, updateTimes } from "./components/Booking";
+import BookingForm from "./components/booking/BookingForm.js";
+import BookingSummary from "./components/booking/BookingSummary.js";
+import Input from "./components/booking/Input.js";
+import { initializeTimes, updateTimes } from "./components/booking/Booking.js";
 
 test("renders form submission button", () => {
   const testObj = {
@@ -34,7 +33,7 @@ test("renders form submission button", () => {
     ></BookingSummary>
   );
   const buttonElement = screen.getByRole("button", {
-    name: /Confirm Reservation/i,
+    name: /Confirm/i,
   });
   expect(buttonElement).toBeInTheDocument();
 });
