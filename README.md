@@ -7,11 +7,7 @@ This project is the capstone project for Meta's Front-End Developer Certificatio
 - [Features](#features)
 - [Prerequisites](#prerequisites)
 - [Installation](#installation)
-- [Running the Project Locally](#running-the-project-locally)
-- [Project Structure](#project-structure)
-- [Technologies Used](#technologies-used)
-- [Contributing](#contributing)
-- [License](#license)
+- [Running the Project Locally](#run-the-project-locally)
 
 ## Overview
 
@@ -38,8 +34,31 @@ node -v
 npm -v
 ```
 
-Clone the repository:
+## Run the project locally
+
+1. Clone the repository:
 
 ```bash
 git clone git@github.com:StaaleKarlstad/LittleLemon.git
 ```
+
+2. Navigate to the project folder:
+
+```bash
+cd LittleLemon
+```
+
+3. Install dependencies
+
+```bash
+npm install
+```
+
+4. Start the development server
+
+```bash
+npm start
+```
+
+5. Navigate to `http://localhost:3000` in your web browser
+
