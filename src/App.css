@@ -6,7 +6,7 @@ h4 {
   font-weight: bolder;
 }
 
-.hero p, .about p {
+.hero p, .about p, button {
   font-family: Karla;
   font-size: 1.2em;
 }
