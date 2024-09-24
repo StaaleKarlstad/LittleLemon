@@ -8,7 +8,7 @@ export default function TestimonialCard(props) {
                 <img src={props.imageURL} alt='user image' className='testimonial-image'></img>
                 <div className='testimonal-user'>{props.name}</div>
             </div>
-            <div className='testimonal-text'>{props.review}</div>
+            <p className='testimonal-text'>{props.review}</p>
         </article>
     )
 }

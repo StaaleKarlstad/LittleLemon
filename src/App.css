@@ -2,7 +2,18 @@ h1,
 h2,
 h3,
 h4 {
-  font-family: serif;
+  font-family: Markazi;
+  font-weight: bolder;
+}
+
+.hero p, .about p {
+  font-family: Karla;
+  font-size: 1.2em;
+}
+
+.meals p, .testimonal p, .link {
+  font-family: Karla;
+  font-size: 1.1em;
 }
 main {
   display: grid;
@@ -65,8 +76,8 @@ header {
 }
 
 .navbar-open {
-  margin:0;
-  padding:0;
+  margin: 0;
+  padding: 0;
 }
 
 .navbar-mobile-open {
@@ -90,8 +101,6 @@ header {
 .navbar-mobile-closed {
   display: none;
 }
-
-
 
 .link-item {
   list-style-type: none;
@@ -117,6 +126,7 @@ header {
   grid-template-rows: 1fr;
   grid-template-areas: ". txt txt img img .";
   background-color: #495e57;
+  gap:30px;
   margin-bottom: 80px;
 }
 
@@ -131,6 +141,7 @@ header {
   top: 50px;
   height: 300px;
   width: 300px;
+  max-width: 300px;
   border-radius: 15px;
   border: 1px solid black;
 }
@@ -198,15 +209,16 @@ header {
 
 .meals-cards {
   grid-area: card;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
   gap: 30px;
   padding-bottom: 2rem;
 }
 
 .mealcard-container {
   background-color: #edefee;
-  
+  max-width: 250px;
 }
 
 .mealcard-text {
@@ -226,14 +238,15 @@ header {
   color: #ee9972;
 }
 
-.mealcard-image{
+.mealcard-image {
+  max-width: 250px;
   width: 100%;
   height: 50%;
   border: 1px solid black;
   object-fit: cover;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 800px) {
   .meals-headline {
     display: flex;
     justify-content: space-between;
@@ -242,16 +255,22 @@ header {
     margin-right: 2rem;
   }
   .meals {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
   .meals-cards {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     padding-bottom: 2rem;
   }
 
   .mealcard-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    max-width: 500px;
     justify-content: center;
     align-items: center;
     padding-left: 1rem;
@@ -383,13 +402,16 @@ footer a {
 footer {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: start;
   gap: 30px;
   background-color: #495e57;
   flex-wrap: wrap;
+  padding-top: 40px;
+  padding-left: 20px;
+  padding-right: 20px;
   bottom: 0px;
 
-  @media(max-width: 400px){
+  @media (max-width: 400px) {
     flex-direction: column;
   }
 }
@@ -399,8 +421,10 @@ footer {
   list-style: none;
 }
 
-.footer-links .link{
- color: white
+
+
+.footer-links .link {
+  color: white;
 }
 
 button {
@@ -492,4 +516,12 @@ select {
   justify-content: center;
   gap: 2rem;
   padding-bottom: 16rem;
+}
+
+.error-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 200px;
 }

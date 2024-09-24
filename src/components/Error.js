@@ -9,7 +9,8 @@ export default function Error(){
     }
     return (
         <div className='error-page'>
-            <h1>404 Ooops...something went wrong</h1>
+            <h1>404 Ooops...</h1>
+            <p>Something went wrong!</p>
             <Button onClick={handleClick} text='To Homepage'></Button>
         </div>
         )
