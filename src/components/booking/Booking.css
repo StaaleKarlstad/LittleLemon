@@ -1,0 +1,78 @@
+.inputform {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    gap: 20px;
+  }
+  
+  .inputform-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .form-input,
+  .form-select {
+    display: flex;
+    flex-direction: column;
+    width: 280px;
+  }
+  
+  .input-button {
+    width: 280;
+    padding: 15px;
+  }
+  input,
+  select {
+    padding: 15px;
+  }
+  
+  .form-error-message {
+    font-size: 12px;
+    padding: 3px;
+    color: red;
+  }
+  
+  .booking-summary-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .booking-summary {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 4rem;
+    padding-top: 2rem;
+    width: 320px;
+  }
+  
+  .booking-summary-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-content: left;
+    width: 100%;
+    border-bottom: 1px solid #495e57;
+  }
+  
+  .booking-summary-buttons {
+    padding-top: 4rem;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+  }
+  .booking-summary-buttons button {
+    width: 160px;
+  }
+  
+  .confirm-booking {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    padding-bottom: 16rem;
+  }

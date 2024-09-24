@@ -1,4 +1,5 @@
 import TestimonialCard from "./TestimonalCard"
+import './Testimonial.css'
 
 export default function Testimonal() {
     return (

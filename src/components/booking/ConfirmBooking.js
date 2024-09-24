@@ -1,3 +1,5 @@
+import './Booking.css'
+
 export default function ConfirmBooking() {
     return (
         <div className='confirm-booking'>

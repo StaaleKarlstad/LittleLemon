@@ -1,6 +1,7 @@
 import MealCard from "./MealCard.js";
 import Button from "../Button.js";
 import mealObjects from "./MealObjects.js";
+import './Meals.css'
 
 export default function Meals() {
   return (

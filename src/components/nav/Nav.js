@@ -1,6 +1,7 @@
 
 import { useState } from "react";
 import NavLinkElement from "./NavLinkElement";
+import './Nav.css'
 
 export default function Nav() {
   const [mobileOpen, setMobileOpen] = useState(false);

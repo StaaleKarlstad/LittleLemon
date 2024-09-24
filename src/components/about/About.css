@@ -1,0 +1,45 @@
+.about {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-areas: ". info info images images .";
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    justify-content: center;
+    background-color: #f4ce14;
+    gap: 30px;
+  }
+  
+  .about-information {
+    grid-area: info;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .about-image-container {
+    grid-area: images;
+    width: 100%;
+  }
+  .about-images {
+    width: 100%;
+  }
+  
+  .about-img-bottom {
+    position: relative;
+    z-index: 2;
+    width: 50%;
+    height: auto;
+    margin-top: 2rem;
+    margin-left: 10vw;
+    object-fit: cover;
+  }
+  
+  .about-img-top {
+    position: relative;
+    z-index: 1;
+    width: 50%;
+    height: auto;
+    margin-top: -16rem;
+    object-fit: cover;
+  }

@@ -1,7 +1,7 @@
-import Hero from "./Hero.js";
+import Hero from "./hero/Hero.js";
 import Meals from "./menu/Meals.js";
 import Testimonal from "./reviews/Testimonal.js";
-import About from "./About.js";
+import About from "./about/About.js";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Wrapper from "./Wrapper.js";
 import Booking from "./booking/Booking.js";

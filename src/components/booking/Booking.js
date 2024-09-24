@@ -1,6 +1,7 @@
 import { useReducer } from "react"
 import { useNavigate } from 'react-router-dom'
 import BookingForm from "./BookingForm"
+import './Booking.css'
 
 const seededRandom = function (seed) {
     var m = 2**35 - 31;

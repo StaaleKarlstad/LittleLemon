@@ -1,0 +1,92 @@
+.meals {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 1fr 3fr;
+    grid-template-areas:
+      ". headline headline headline headline ."
+      ". card card card card .";
+  }
+  
+  .meals-headline {
+    grid-area: headline;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .meals-cards {
+    grid-area: card;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 30px;
+    padding-bottom: 2rem;
+  }
+  
+  .mealcard-container {
+    background-color: #edefee;
+    max-width: 250px;
+  }
+  
+  .mealcard-text {
+    padding: 20px;
+  }
+  
+  .mealcard-text-headline {
+    display: flex;
+    gap: 30px;
+  }
+  
+  .mealcard-text-headline > * {
+    flex-grow: 1;
+  }
+  
+  .mealcard-price {
+    color: #ee9972;
+  }
+  
+  .mealcard-image {
+    max-width: 250px;
+    width: 100%;
+    height: 50%;
+    border: 1px solid black;
+    object-fit: cover;
+  }
+  
+  @media (max-width: 800px) {
+    .meals-headline {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-left: 2rem;
+      margin-right: 2rem;
+    }
+    .meals {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .meals-cards {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding-bottom: 2rem;
+    }
+  
+    .mealcard-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      max-width: 500px;
+      justify-content: center;
+      align-items: center;
+      padding-left: 1rem;
+      margin: 2rem;
+    }
+  
+    .mealcard-image img {
+      width: 80%;
+      height: 80%;
+      border: 1px solid black;
+    }
+  }
